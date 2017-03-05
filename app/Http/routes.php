@@ -63,3 +63,4 @@ Route::any('admin/test',function(){
 Route::get('/test1','IndexController@test1');
 Route::get('/test','IndexController@test');
 Route::get('/getdata/{id?}/{name?}','IndexController@getdata');
+Route::post('/wechat','WechatController@wechat');
