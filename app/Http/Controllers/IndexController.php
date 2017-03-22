@@ -70,15 +70,22 @@ class IndexController extends Controller
             ->select('username','password')
             ->get();*/
 //        $users=User::select('username','password')->find(1);
-        $users=User::select('username','password')->where('user_id',1)->first();
-//        dd($users);
+//        $users=User::select('username','password')->where('user_id',1)->first();
+//        $users =User::where([])->get(['username as user','password']);
+//        $users =User::all(['username as user','password']);toSql
+        $sql = Article::orderBy('viewnum','desc')
+            ->limit(6)
+            ->skip(4)
+            ->toSql();
+        $sql = Article::orderBy('viewnum','desc')
+            ->skip(6)
+            ->limit(7)
+            ->toSql();
+        dd($sql);
 //        dd(User::find(1));
-        $user=new User();
+//        $user=new User();
 //        dd($user->first());
 //        dd(User::first());
-        $info=[];
-        $info['status']=1;
-        $info['msg']='你好';
 
     }
 
