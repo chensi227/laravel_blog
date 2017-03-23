@@ -77,16 +77,12 @@ class IndexController extends Controller
             ->limit(6)
             ->skip(4)
             ->toSql();
+//            ->keyBy();以什么为键值对
         $sql = Article::orderBy('viewnum','desc')
             ->skip(6)
             ->limit(7)
             ->toSql();
         dd($sql);
-//        dd(User::find(1));
-//        $user=new User();
-//        dd($user->first());
-//        dd(User::first());
-
     }
 
     public function test1()
